@@ -6,7 +6,7 @@
 public class TestMain {
 
     public static void main(String[] args){
-        PP1HWEvaluation test = new PP1HWEvaluation();
+        HomeworkEval test = new HomeworkEval();
     }
 
 
