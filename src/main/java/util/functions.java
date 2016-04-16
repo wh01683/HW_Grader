@@ -4,12 +4,15 @@ import de.nixosoft.jlr.JLRGenerator;
 import entries.StudentEntry;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.channels.FileChannel;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 import static util.Constants.OUTPUT_DIR;
-import static util.Constants.WORKING_DIR_FILE;
+import static util.Constants.TEMP_DIR_FILE;
 
 
 /**
@@ -38,12 +41,12 @@ public class Functions {
         JLRGenerator pdfGen = new JLRGenerator();
 
         System.out.printf("\nWorking Dir: %s\nTex File Name: %s\nOutput Dir: %s\n",
-                WORKING_DIR_FILE.getAbsolutePath(),
+                TEMP_DIR_FILE.getAbsolutePath(),
                 texFile.getAbsolutePath(),
                 OUTPUT_DIR.getAbsolutePath());
 
         // create a pdf from latex file
-        if (!pdfGen.generate(texFile, OUTPUT_DIR, WORKING_DIR_FILE)) {
+        if (!pdfGen.generate(texFile, OUTPUT_DIR, TEMP_DIR_FILE)) {
             System.out.println(pdfGen.getErrorMessage());
 
         }else{
@@ -67,6 +70,22 @@ public class Functions {
             if(logFile.delete() ){
                 System.out.printf("%s was successfully deleted.\n", logName);
             }
+        }
+    }
+
+    public static void copyFile(File source, File dest)
+            throws IOException {
+
+        FileChannel inputChannel = null;
+        FileChannel outputChannel = null;
+
+        try {
+            inputChannel = new FileInputStream(source).getChannel();
+            outputChannel = new FileOutputStream(dest).getChannel();
+            outputChannel.transferFrom(inputChannel, 0, inputChannel.size());
+        } finally {
+            inputChannel.close();
+            outputChannel.close();
         }
     }
 

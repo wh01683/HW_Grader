@@ -23,5 +23,6 @@
         <jarDirectory url="file://$MODULE_DIR$/jlr" recursive="false" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="junit:junit:4.10" level="project" />
   </component>
 </module>

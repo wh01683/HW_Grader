@@ -8,7 +8,7 @@ import static util.Constants.*;
 public class Homework implements Assignment {
 
 
-    private static double totalPointWorth = 100;
+    private double totalPointWorth = 100;
 
     private String assignmentName, className, section;
     private boolean reqUML;
@@ -19,7 +19,9 @@ public class Homework implements Assignment {
         this.section = section;
         this.reqUML = reqUML;
         if(reqUML){
-            totalPointWorth *= (1 - UML_GRADE_PERCENTAGE);
+            totalPointWorth = TOTAL_POINTS_HOMEWORK * (1 - UML_GRADE_PERCENTAGE);
+        }else{
+            totalPointWorth = TOTAL_POINTS_HOMEWORK;
         }
     }
 

@@ -53,7 +53,7 @@ public class StudentEntryWithUML extends StudentEntry implements Rubricable{
     }
 
     private File writeUMLTexFile() {
-        JLRConverter converter = new JLRConverter(WORKING_DIR_FILE);
+        JLRConverter converter = new JLRConverter(TEMP_DIR_FILE);
 
         double umlGrade = this.getUmlGrade();
 
@@ -76,7 +76,7 @@ public class StudentEntryWithUML extends StudentEntry implements Rubricable{
         converter.replace("umlPointsGiven", nf.format(umlGrade));
         converter.replace("umlComments", umlComm);
 
-        File tempTexFile = new File(WORKING_DIR_FILE.getAbsolutePath().concat(util.Functions.makeFileName(this, "UML", "tex")));
+        File tempTexFile = new File(TEMP_DIR_FILE.getAbsolutePath().concat(util.Functions.makeFileName(this, "UML", "tex")));
 
 
         try {

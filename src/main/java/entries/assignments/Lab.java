@@ -19,7 +19,9 @@ public class Lab implements Assignment{
         this.reqUML = reqUML;
 
         if(reqUML){
-            totalPointWorth *= (1 - UML_GRADE_PERCENTAGE);
+            totalPointWorth = TOTAL_POINTS_LAB * (1 - UML_GRADE_PERCENTAGE);
+        }else{
+            totalPointWorth = TOTAL_POINTS_LAB;
         }
     }
 

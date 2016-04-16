@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage{helvet, amsmath, booktabs}
+\renewcommand{\familydefault}{\sfdefault}
+\usepackage{array}
+\usepackage[a4paper,hmargin = 1cm, vmargin = 1cm, headheight=10pt]{geometry}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+
+
+
+\begin{document}
+	
+{\begin{flushright}
+$semester		
+\end{flushright}
+
+\centering
+\begin{center}
+	\fontsize{18}{1}
+	\textbf{
+	$className
+	$section
+	$assignmentTitle
+	}
+	\vspace{1cm}
+	\normalsize
+\end{center}
+\noindent \textbf{NAME \underline{
+		\hspace{2.5cm}
+		\large
+		$studentName
+		\normalsize
+		\hspace{2.5cm}
+		}
+	GRADE: \underline{
+		\hspace{1cm}
+		\large
+		$umlGrade
+		\normalsize
+		\hspace{1cm}
+		}}\newline
+\begin{flushleft}
+\noindent This UML diagram is worth
+$totalPoints
+ points.
+\end{flushleft}
+
+
+\begin{table}[h]
+\begin{tabular}{|P{5cm}|P{2cm}|P{2cm}|P{8cm}|}
+		\hline
+		\rule{0pt}{2ex}
+		Grade Criteria 
+		&  
+		Max. Points
+		& 
+		Points Given
+		& 
+		COMMENTS
+		\\
+		\hline
+		Correct UML Diagram
+		&
+		$umlMaxPoints
+		& 
+		$umlPointsGiven
+		& 
+		$umlComments
+		\\
+		\hline
+		
+	\end{tabular}
+\end{table}	
+
+	
+		
+\end{document}

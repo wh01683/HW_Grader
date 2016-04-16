@@ -18,7 +18,4 @@ public interface Assignment {
 
     double masterTotalPoints();
 
-
-
-
 }

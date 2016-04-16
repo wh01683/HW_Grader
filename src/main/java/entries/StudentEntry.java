@@ -122,7 +122,7 @@ public class StudentEntry implements Rubricable{
 
     public File writeTexFile() {
 
-        JLRConverter converter = new JLRConverter(WORKING_DIR_FILE);
+        JLRConverter converter = new JLRConverter(TEMP_DIR_FILE);
 
         NumberFormat nf = new DecimalFormat("##.#");
 
@@ -180,7 +180,7 @@ public class StudentEntry implements Rubricable{
 
 
 
-        File tempTexFile = new File(WORKING_DIR_FILE.getAbsolutePath().concat(util.Functions.makeFileName(this, "", "tex")));
+        File tempTexFile = new File(TEMP_DIR_FILE.getAbsolutePath().concat(util.Functions.makeFileName(this, "", "tex")));
 
         try {
             if (!converter.parse(RUBRIC_TEMPLATE_TEX, tempTexFile)) {
