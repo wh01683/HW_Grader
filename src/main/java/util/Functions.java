@@ -11,7 +11,7 @@ import java.nio.channels.FileChannel;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
-import static util.Constants.OUTPUT_DIR;
+import static util.Constants.OUTPUT_DIR_FILE;
 import static util.Constants.SEP;
 import static util.Constants.TEMP_DIR_FILE;
 
@@ -44,10 +44,10 @@ public class Functions {
         System.out.printf("\nWorking Dir: %s\nTex File Name: %s\nOutput Dir: %s\n",
                 TEMP_DIR_FILE.getAbsolutePath(),
                 texFile.getAbsolutePath(),
-                OUTPUT_DIR.getAbsolutePath());
+                OUTPUT_DIR_FILE.getAbsolutePath());
 
         // create a pdf from latex file
-        if (!pdfGen.generate(texFile, OUTPUT_DIR, TEMP_DIR_FILE)) {
+        if (!pdfGen.generate(texFile, OUTPUT_DIR_FILE, TEMP_DIR_FILE)) {
             System.out.println(pdfGen.getErrorMessage());
 
         }else{
@@ -74,6 +74,12 @@ public class Functions {
         }
     }
 
+    /**
+     * Copies a file from a source file to a destination file.
+     * @param source File object to copy.
+     * @param dest File to copy to.
+     * @throws IOException
+     */
     public static void copyFile(File source, File dest)
             throws IOException {
 
