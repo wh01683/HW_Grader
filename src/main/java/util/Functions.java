@@ -56,6 +56,10 @@ public class Functions {
             //create File objects with paths to the aux and log files.
             File auxFile = new File(texFile.getAbsolutePath().replace(".tex", ".aux"));
             File logFile = new File(texFile.getAbsolutePath().replace(".tex", ".log"));
+            File auxFile2 = new File(OUTPUT_DIR_FILE.getAbsolutePath().concat(SEP).concat(texFile.getName()).replace(".tex", ".aux"));
+            File logFile2 = new File(OUTPUT_DIR_FILE.getAbsolutePath().concat(SEP).concat(texFile.getName()).replace(".tex", ".log"));
+
+            System.out.printf("temp aux file: %s\ntemp log file: %s\n", auxFile, logFile);
 
             String texName = texFile.getName();
             String logName = logFile.getName();
@@ -70,6 +74,12 @@ public class Functions {
             }
             if(logFile.delete() ){
                 System.out.printf("%s was successfully deleted.\n", logName);
+            }
+            if(auxFile2.delete() ){
+                System.out.printf("%s was successfully deleted.\n", auxFile2.getName());
+            }
+            if(logFile2.delete() ){
+                System.out.printf("%s was successfully deleted.\n", logFile2.getName());
             }
         }
     }
