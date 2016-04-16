@@ -12,6 +12,7 @@ import java.text.DecimalFormat;
 import java.text.NumberFormat;
 
 import static util.Constants.OUTPUT_DIR;
+import static util.Constants.SEP;
 import static util.Constants.TEMP_DIR_FILE;
 
 
@@ -27,7 +28,7 @@ public class Functions {
         String assignment = entry.getAssignmentName();
         String gradeStr = nf.format(entry.getAssignmentGrade());
 
-        StringBuilder sb = new StringBuilder("\\").append(name).append("_").append(assignment).append("_").append(gradeStr);
+        StringBuilder sb = new StringBuilder(SEP).append(name).append("_").append(assignment).append("_").append(gradeStr);
         if(etc != ""){
             sb.append("_").append(etc);
         }

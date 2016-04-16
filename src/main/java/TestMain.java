@@ -11,6 +11,7 @@ import static util.Functions.copyFile;
 public class TestMain {
 
     public static void main(String[] args){
+
         init();
         HomeworkEval test = new HomeworkEval();
 

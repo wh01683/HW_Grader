@@ -25,8 +25,9 @@ public class Constants {
 
     //files to use in program for generating pdfs.
     public static final File TEMP_DIR_FILE = new File(TEMP_DIR);
-    public static final File RUBRIC_TEMPLATE_TEX = new File(TEMP_DIR_FILE.getAbsolutePath().concat(SEP).concat("rubric_template.tex"));
-    public static final File UML_RUBRIC_TEMPLATE_TEX = new File(TEMP_DIR_FILE.getAbsolutePath().concat(SEP).concat("uml_rubric.tex"));
+
+    public static final File RUBRIC_TEMPLATE_TEX = new File(TEMP_DIR.concat(SEP).concat("rubric_template.tex"));
+    public static final File UML_RUBRIC_TEMPLATE_TEX = new File(TEMP_DIR.concat(SEP).concat("uml_rubric.tex"));
 
     //should make folder in same directory as program.
     public static final File OUTPUT_DIR = new File(new File(CURRENT_DIR).getParent().concat(SEP).concat("rubric_pdfs").concat(SEP));
