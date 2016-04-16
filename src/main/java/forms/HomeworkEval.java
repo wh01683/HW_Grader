@@ -1,3 +1,5 @@
+package forms;
+
 import entries.StudentEntry;
 import entries.StudentEntryWithUML;
 import entries.assignments.Assignment;
